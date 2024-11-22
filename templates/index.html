@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Text - Transcribe Your Audio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice to Text Transcription</h1>
+        <p class="description">
+            Easily convert your speech into text! Upload an audio file and let the transcription happen automatically. It’s fast, free, and efficient!
+        </p>
+
+        <div class="instructions">
+            <h2>How it Works</h2>
+            <ul>
+                <li>Click the "Choose an audio file" button to select your audio file.</li>
+                <li>Click "Transcribe" to upload the file and begin the transcription process.</li>
+                <li>Once the transcription is complete, the text will appear on the screen.</li>
+            </ul>
+        </div>
+
+        <form action="/transcribe" method="POST" enctype="multipart/form-data">
+            <input type="file" name="audio" id="audio" accept="audio/*">
+            <label for="audio">Choose an audio file</label>
+            <button type="submit">Transcribe</button>
+        </form>
+
+        <div class="footer">
+            <p>&copy; 2024 Voice to Text Transcription. All rights reserved.</p>
+            <p><a href="https://speechnotes.co" target="_blank"></a></p>
+        </div>
+    </div>
+</body>
+</html>
